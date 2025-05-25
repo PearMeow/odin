@@ -8,11 +8,11 @@ function multiply(num1, num2) {
 
 function capitalize(str) {
     capital = str.substring(0, 1).toUpperCase();
-    return capital + str.substring(1, str.length());
+    return capital + str.substring(1, str.length);
 }
 
 function lastLetter(str) {
-    return str.substring(str.length() - 1, str.length());
+    return str.substring(str.length - 1, str.length);
 }
 
 for (let i = 0; i < 10; ++i) {
