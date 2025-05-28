@@ -1,8 +1,8 @@
-let name = "John";
+let theName = "John";
 let surname = "Doe";
 
 console.log("This is a script that will be run from an html file.")
-console.log(name);
+console.log(theName);
 console.log(surname);
 
 let age = 11;
@@ -64,5 +64,58 @@ for (const button of buttons) {
 console.log((4 + 6 + 9) / 77);
 
 let arr = [1, 2, 3, 4, 5];
-
 let sumTriplEvens = arr.filter((num) => num % 2 == 0).map((num) => num * 3).reduce((total, num) => total + num, 0);
+console.log(sumTriplEvens);
+
+function camelize(str) {
+    arr = str.split("-");
+    newArr = arr.map((word) => word[0].toUpperCase() + word.slice(1));
+    newArr[0] = newArr[0][0].toLowerCase() + newArr[0].slice(1);
+    return newArr.join("");
+}
+
+if (camelize("list-style-image") == "listStyleImage") {
+    console.log("They're equal");
+} else {
+    console.log("They are not equal");
+}
+
+function filterRange(arr = [], a = 0, b = 0) {
+    return arr.filter((num) => num >= a && num <= b);
+}
+
+arr = [5, 3, 8, 1];
+console.log(filterRange(arr, 1, 4));
+console.log(arr);
+
+function filterRangeInPlace(arr = [], a = 0, b = 0) {
+    for (let i = 0; i < arr.length; ++i) {
+        if (arr[i] < a || arr[i] > b) {
+            arr.splice(i, 1);
+            --i;
+        }
+    }
+}
+
+let anotherArr = [5, 2, 1, -10, 8];
+
+anotherArr.sort((a, b) => b - a);
+
+function copySorted(arr = []) {
+    newArr = arr.slice(0);
+    newArr.sort();
+    return newArr;
+}
+
+let anArr = ["HTML", "JavaScript", "CSS"];
+console.log(copySorted(anArr));
+
+function unique(arr = []) {
+    let res = [];
+    for (let i = 0; i < arr.length; ++i) {
+        if (!res.includes(arr[i])) {
+            res.push(arr[i]);
+        }
+    }
+    return res;
+}
