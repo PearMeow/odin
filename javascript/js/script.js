@@ -62,3 +62,7 @@ for (const button of buttons) {
 }
 
 console.log((4 + 6 + 9) / 77);
+
+let arr = [1, 2, 3, 4, 5];
+
+let sumTriplEvens = arr.filter((num) => num % 2 == 0).map((num) => num * 3).reduce((total, num) => total + num, 0);
