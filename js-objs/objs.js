@@ -49,3 +49,18 @@ timesTwo(menu);
 for (let key in menu) {
     console.log(menu[key]);
 }
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [john, pete, mary];
+let names = [];
+
+for (let user of users) {
+    names.push(user.name);
+}
+
+console.log(names);
+
+
