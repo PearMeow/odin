@@ -35,6 +35,13 @@ caption {
     padding: 10px;
 }
 
+thead tr:nth-child(2) {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+
+}
+
 tbody {
     font-size: 95%;
 }
