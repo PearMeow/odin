@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <ul>
+            <li>
+                <label for="id">User ID</label>
+                <input type="text" id="id" name="id">
+            </li>
+            <li>
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password">
+            </li>
+            <li>
+                <button type="submit">Submit</button>
+            </li>
+        </ul>
+    </form>
+    <form>
+        <fieldset>
+            <legend>Who is your favorite pony?</legend>
+            <ul>
+                <li>
+                    <input type="radio" id="pinkie" name="pony" checked>
+                    <label for="pinkie">Pinkie Pie</label>
+                </li>
+                <li>
+                    <input type="radio" id="rainbow" name="pony">
+                    <label for="rainbow">Rainbow Dash</label>
+                </li>
+                <li>
+                    <input type="radio" id="twilight" name="pony">
+                    <label for="twilight">Twilight Sparkle</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Hotdog preferences</legend>
+            <ul>
+                <li>
+                    <input type="checkbox" id="vegan" name="preference">
+                    <label for="vegan">Vegan</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="onions" name="preference">
+                    <label for="onions">Onions</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="ketchup" name="preference">
+                    <label for="ketchup">Ketchup</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="mayo" name="preference">
+                    <label for="mayo">Mayo</label>
+                </li>
+            </ul>
+        </fieldset>
+        <button>Submit</button>
+    </form>
+    <form>
+        <ul>
+            <li>
+                <label for="gallery-img">Choose gallery images to upload</label>
+                <input type="file" id="gallery-img" name="image" accept="image/*">
+            </li>
+        </ul>
+        <button>Submit</button>
+    </form>
+
+</body>
+
+</html>
