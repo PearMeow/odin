@@ -6,33 +6,22 @@ const myObject = {
     }
 };
 
-// example one
-const playerOneName = "tim";
-const playerTwoName = "jenn";
-const playerOneMarker = "X";
-const playerTwoMarker = "O";
+// // example one
+// const playerOneName = "tim";
+// const playerTwoName = "jenn";
+// const playerOneMarker = "X";
+// const playerTwoMarker = "O";
 
-// example two
-const playerOne = {
-    name: "tim",
-    marker: "X"
-};
+// // example two
+// const playerOne = {
+//     name: "tim",
+//     marker: "X"
+// };
 
-const playerTwo = {
-    name: "jenn",
-    marker: "O"
-};
-
-function Player(name, marker) {
-    if (!new.target) {
-        throw Error("You must use the new operator to call the constructor");
-    }
-    this.name = name;
-    this.marker = marker;
-    this.sayName = function() {
-        console.log(this.name)
-    };
-}
+// const playerTwo = {
+//     name: "jenn",
+//     marker: "O"
+// };
 
 function Book(title, author, pages, read = false) {
     if (!new.target) {
@@ -55,3 +44,40 @@ function Book(title, author, pages, read = false) {
 
 let theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295);
 console.log(theHobbit.info());
+
+function Player(name, marker) {
+    if (!new.target) {
+        throw Error("You must use the new operator to call the constructor");
+    }
+    this.name = name;
+    this.marker = marker;
+}
+
+Player.prototype.getMarker = function() {
+    console.log(`My marker is ${this.marker}`)
+}
+
+function Person(name) {
+    if (!new.target) {
+        throw Error("You must use the new operator to call the constructor")
+    }
+    this.name = name
+}
+
+Person.prototype.sayName = function() {
+    console.log(`Hello! I'm ${this.name}`);
+}
+
+Object.getPrototypeOf(Player.prototype); // returns Object.prototype
+
+Object.setPrototypeOf(Player.prototype, Person.prototype);
+Object.getPrototypeOf(Player.prototype); // returns Person.prototype
+
+const player1 = new Player("steve", "X");
+const player2 = new Player("also steve", "O");
+
+player1.sayName();
+player2.sayName();
+
+player1.getMarker();
+player2.getMarker();
