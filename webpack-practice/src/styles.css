@@ -1,0 +1,11 @@
+/* styles.css */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box,
+}
+
+body {
+    background-color: rebeccapurple;
+}
