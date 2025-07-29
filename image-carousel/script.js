@@ -30,14 +30,30 @@ const picArr = {
     },
     changeWhere() {
         let text = "";
+        where.replaceChildren();
+        const btns = document.createElement("div");
+        const btnArr = [];
         for (let i = 0; i < this.thePics.length; ++i) {
             if (i === this.currInd) {
-                text += "O";
+                text = "O";
             } else {
-                text += ".";
+                text = ".";
             }
+            const progressBtn = document.createElement("button");
+            btnArr.push(progressBtn);
+            progressBtn.textContent = text;
+            progressBtn.addEventListener("click", () => {
+                if (this.currInd !== -1) {
+                    this.thePics[this.currInd].style.display = "none";
+                    btnArr[this.currInd].textContent = ".";
+                }
+                this.thePics[i].style.display = "block";
+                this.currInd = i;
+                progressBtn.textContent = "O";
+            });
+            btns.appendChild(progressBtn);
         }
-        where.textContent = text;
+        where.appendChild(btns);
     },
 };
 
