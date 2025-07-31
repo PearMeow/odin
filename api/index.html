@@ -5,21 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
     <img src="#" alt="">
-    <script>
-        const img = document.querySelector('img');
-        fetch('https://api.giphy.com/v1/gifs/translate?api_key=&s=cats')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (response) {
-                img.src = response.data.images.original.url;
-            })
-            ;
-    </script>
 </body>
 
 </html>
