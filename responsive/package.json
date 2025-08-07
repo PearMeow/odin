@@ -1,0 +1,24 @@
+{
+  "name": "responsive-pages",
+  "version": "1.0.0",
+  "description": "responsive-pages",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@eslint/js": "^9.32.0",
+    "babel-jest": "^30.0.5",
+    "eslint_d": "^14.3.0",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "jest": "^30.0.5"
+  },
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "main": "babel.config.js"
+}
