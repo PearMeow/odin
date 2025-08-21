@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title> Homepage </title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+<body>
+    <%- include('navbar', {links: links}) %>
+    <% for (let i = 0; i < users.length; ++i) { %>
+        <%- include('users/user', {user: users[i]}) %>
+    <% } %>
+
+</body>
+</html>
