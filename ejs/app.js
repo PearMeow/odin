@@ -16,11 +16,22 @@ const links = [
 ];
 
 const users = ["Rose", "Cake", "Biff"];
+const myName = "Meow meow";
+const contactLink = "https://google.com";
 
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
-app.get("/", (req, res) => res.render("index", { links: links, users: users }));
+app.get("/", (req, res) =>
+    res.render("index", {
+        links: links,
+        users: users,
+        contactLink: contactLink,
+    }),
+);
+app.get("/about", (req, res) =>
+    res.render("about", { name: myName, contactLink: contactLink }),
+);
 
 const PORT = 3000;
 
