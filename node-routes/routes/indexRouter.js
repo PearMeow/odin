@@ -11,8 +11,8 @@ indexRouter.get("/contact", (req, res) => {
 indexRouter.post("/contact", (req, res) => {
     res.send("Contact get");
 });
-indexRouter.get("/{*splat}", (req, res) =>
-    res.send("404 Error! But not really..."),
-);
+// indexRouter.get("/{*splat}", (req, res) =>
+//     res.send("404 Error! But not really..."),
+// );
 
 module.exports = indexRouter;
