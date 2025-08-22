@@ -17,12 +17,16 @@ VALUES
   ('Damon');
 `;
 
-DB_URL = "postgresql://${USER}:${PASSWORD}@${HOST}:${PORT}/${DATABASE}";
+DB_URL =
+    argv[2] === undefined
+        ? `postgresql://${process.env.USER}:${process.env.PASSWORD}@localhost:${process.env.PORT}/${process.env.DATABASE}`
+        : argv[2];
+console.log(DB_URL);
 
 async function main() {
     console.log("seeding...");
     const client = new Client({
-        connectionString: `postgresql://${process.env.USER}:${process.env.PASSWORD}@${argv[2]}:${process.env.PORT}/${process.env.DATABASE}`,
+        connectionString: DB_URL,
     });
     await client.connect();
     await client.query(SQL);
