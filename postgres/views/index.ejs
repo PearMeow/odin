@@ -1,9 +1,19 @@
 <html>
     <head>
-        <title> Homepage </title>
+        <title><%= title %></title>
         <link rel="stylesheet" href="/styles.css">
     </head>
 <body>
-        <p>Hello world</p>
+    <form action="/" method="GET">
+        <label for="search">Search</label>
+        <input type="text" id="search" name="search">
+        <button type="submit">Submit</button>
+    </form>
+    <ul>
+        <% users.forEach((currUser) => { %>
+            <li><%= currUser.username %></li>
+        <% }) %>
+    </ul>
+    <a href="/delete">Delete all users</a>
 </body>
 </html>
